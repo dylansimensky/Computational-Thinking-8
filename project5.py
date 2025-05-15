@@ -47,6 +47,23 @@ def move_right() :
 	s1.setheading(0)
 	s1.forward(6)
 window.onkeypress(move_right,"Right")
+
+def move_up() :
+	s2.setheading(90)
+	s2.forward(6)
+window.onkeypress(move_up,"w")
+def move_left() :
+	s2.setheading(180)
+	s2.forward(6)
+window.onkeypress(move_left,"a")
+def move_down() :
+	s2.setheading(270)
+	s2.forward(6)
+window.onkeypress(move_down,"s")
+def move_right() :
+	s2.setheading(0)
+	s2.forward(6)
+window.onkeypress(move_right,"d")
 # Section 4: Game Loop
 window.listen()
 timer = 0
@@ -57,15 +74,17 @@ while True:
     
  	# TODO - code for automatic actions
 
-
+	if timer == 600 :
+		print("flower wins")
+		break
 
 
 
 
 	window.update()
-
-	# if :
-	# 	break
+	if get_distance(s1,s2)<50:
+		print("fox wins")
+		break
 	
 
 print("Game Over")
